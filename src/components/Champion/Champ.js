@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import ChampItem from './ChampItem';
-import axios from 'axios';
+import React, { useEffect, useState } from "react";
+import ChampItem from "./ChampItem";
+import axios from "axios";
 
 const Champ = () => {
   const [champ, setChamp] = useState([]);
@@ -12,8 +12,8 @@ const Champ = () => {
 
   async function getChamp() {
     await axios({
-      method: 'get',
-      url: `https://ergast.com/api/f1/driverstandings/1.json?limit=60&offset=55`
+      method: "get",
+      url: `https://ergast.com/api/f1/driverstandings/1.json?limit=60&offset=55`,
     }).then((response) => {
       setChamp(response.data.MRData.StandingsTable.StandingsLists);
     });
@@ -25,7 +25,7 @@ const Champ = () => {
   useEffect(() => {}, [clickIndex]);
 
   return (
-    <div className="p-20">
+    <div className="p-3">
       {champ.map((user, index) => (
         <ChampItem
           user={user}

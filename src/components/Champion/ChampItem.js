@@ -1,12 +1,12 @@
-import React, { useState, useEffect,useRef } from 'react';
-import { Table } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import SeasonalRace from '../Races/SeasonalRace';
+import React, { useState, useEffect, useRef } from "react";
+import { Table } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+import SeasonalRace from "../Races/SeasonalRace";
 
 const ChampItem = ({ user, closeHandle, clickIndex, index }) => {
   const [isTableSelected, setIsTableSelected] = useState(clickIndex === index);
   const [setYear, setsetYear] = useState(2005);
-  const [champ, setChamp] = useState('');
+  const [champ, setChamp] = useState("");
 
   function handleClick(season, driverId) {
     setIsTableSelected(true);
@@ -24,13 +24,17 @@ const ChampItem = ({ user, closeHandle, clickIndex, index }) => {
   return (
     <div style={styles.component}>
       {isTableSelected ? (
-        <SeasonalRace setYear={setYear} champ={champ} />
+        <SeasonalRace
+          setYear={setYear}
+          champ={champ}
+          closeResult={() => setIsTableSelected(false)}
+        />
       ) : (
         <Table
           striped
           bordered
           hover
-          className="border border-1 border-dark my-3"
+          className="border border-1 border-dark"
           style={styles.cardWraper}
           onClick={() =>
             handleClick(user.season, user.DriverStandings[0].Driver.driverId)
@@ -65,15 +69,15 @@ const ChampItem = ({ user, closeHandle, clickIndex, index }) => {
 
 const styles = {
   component: {
-    backgroundColor: '#e5e5e5'
+    backgroundColor: "#e5e5e5",
   },
   cardWraper: {
-    cursor: 'pointer'
+    cursor: "pointer",
   },
   icon: {
-    'font-size': '1.5rem',
-    'font-weight': '700'
-  }
+    "font-size": "1.5rem",
+    "font-weight": "700",
+  },
 };
 
 export default ChampItem;

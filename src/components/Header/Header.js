@@ -1,7 +1,7 @@
-import React from 'react';
-import { Navbar, Container } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import f1Logo from '../assets/f1-logo.png';
+import React from "react";
+import { Navbar, Container } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+import f1Logo from "../assets/f1-logo.png";
 
 const Header = () => {
   return (

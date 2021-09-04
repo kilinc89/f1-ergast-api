@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 const Tracks = ({ user, champ }) => {
   const findChamp = () => {
     return champ === user.Results[0].Driver.driverId;
@@ -7,7 +7,7 @@ const Tracks = ({ user, champ }) => {
     <>
       <tr
         className="tableId"
-        style={findChamp() ? { backgroundColor: '#20c997' } : null}
+        style={findChamp() ? { backgroundColor: "#20c997" } : null}
       >
         <td>{user.Circuit.circuitName}</td>
         <td>{`${user.Results[0].Driver.givenName} ${user.Results[0].Driver.familyName}`}</td>
