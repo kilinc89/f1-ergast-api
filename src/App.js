@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import { Container } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Champ from "./components/Champion/Champ";
+import ChampionsList from "./components/Champion/ChampionsList";
 import Header from "./components/Header/Header";
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       <Header />
       <Container>
-        <Champ />
+        <ChampionsList />
       </Container>
     </div>
   );

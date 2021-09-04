@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import ChampItem from "./ChampItem";
 import axios from "axios";
 
-const Champ = () => {
+const ChampionsList = () => {
   const [champ, setChamp] = useState([]);
   const [clickIndex, setclickIndex] = useState(null);
 
@@ -39,4 +39,4 @@ const Champ = () => {
   );
 };
 
-export default Champ;
+export default ChampionsList;
