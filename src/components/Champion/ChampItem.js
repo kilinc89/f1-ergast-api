@@ -5,7 +5,7 @@ import { ArrowDownOutlined } from "@ant-design/icons";
 
 const ChampItem = ({ user, closeHandle, clickIndex, index }) => {
   const [isTableSelected, setIsTableSelected] = useState(clickIndex === index);
-  const [setYear, setsetYear] = useState(2005);
+  const [setYear, setsetYear] = useState(null);
   const [championID, setchampionID] = useState("");
 
   const handleClick=(season, driverId)=> {
