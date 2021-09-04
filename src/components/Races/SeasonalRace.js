@@ -1,8 +1,8 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
+import axios from "axios";
 import Tracks from "./Tracks";
+import { ArrowUpOutlined } from "@ant-design/icons";
 
 const SeasonalRaces = ({ setYear, championID, closeResult }) => {
   const [seasonalRaces, setseasonalRaces] = useState([]);
@@ -21,8 +21,19 @@ const SeasonalRaces = ({ setYear, championID, closeResult }) => {
       <Table striped bordered hover className="border border-3">
         <thead>
           <tr>
-            <th colSpan="7"  className="hover-cursor" onClick={() => closeResult()}>
+            <th
+              colSpan="6"
+              className="hover-cursor"
+              onClick={() => closeResult()}
+            >
               Season:{setYear} Race Results
+            </th>
+            <th
+              colSpan="1"
+              className="hover-cursor"
+              onClick={() => closeResult()}
+            >
+              <ArrowUpOutlined></ArrowUpOutlined>
             </th>
           </tr>
           <tr>
@@ -49,7 +60,7 @@ const SeasonalRaces = ({ setYear, championID, closeResult }) => {
 const styles = {
   cardWraper: {
     cursor: "pointer",
-  }
+  },
 };
 
 export default SeasonalRaces;

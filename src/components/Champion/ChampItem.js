@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { Table } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
 import SeasonalRace from "../Races/SeasonalRace";
+import { ArrowDownOutlined } from "@ant-design/icons";
 
 const ChampItem = ({ user, closeHandle, clickIndex, index }) => {
   const [isTableSelected, setIsTableSelected] = useState(clickIndex === index);
@@ -22,7 +22,7 @@ const ChampItem = ({ user, closeHandle, clickIndex, index }) => {
   }, [clickIndex]);
 
   return (
-    <div style={styles.component}>
+    <div style={styles.component} >
       {isTableSelected ? (
         <SeasonalRace
           setYear={setYear}
@@ -38,10 +38,14 @@ const ChampItem = ({ user, closeHandle, clickIndex, index }) => {
           onClick={() =>
             handleClick(user.season, user.DriverStandings[0].Driver.driverId)
           }
+          
         >
           <thead>
             <tr>
-              <th colSpan="5">Season:{user.season} Champion</th>
+              <th colSpan="4" data-testid="champ-info">Season:{user.season} Champion</th>
+              <th colSpan="1">
+                <ArrowDownOutlined />
+              </th>
             </tr>
             <tr>
               <th>Driver</th>
