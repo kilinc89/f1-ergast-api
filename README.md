@@ -1,5 +1,6 @@
 # f1-ergast
 ## To run app 
+    npm i
     npm start
 
 ## Arhitecture
