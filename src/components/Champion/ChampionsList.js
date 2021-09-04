@@ -10,7 +10,7 @@ const ChampionsList = () => {
     champ.length<1 && getChamp();
   }, []);
 
-  async function getChamp() {
+  const getChamp = async () => {
     await axios({
       method: "get",
       url: `https://ergast.com/api/f1/driverstandings/1.json?limit=60&offset=55`,
@@ -18,11 +18,6 @@ const ChampionsList = () => {
       setChamp(response.data.MRData.StandingsTable.StandingsLists);
     });
   }
-  const closeHandle = (index) => {
-    setclickIndex(index);
-  };
-
-  useEffect(() => {}, [clickIndex]);
 
   return (
     <div className="p-3 row">
@@ -31,7 +26,7 @@ const ChampionsList = () => {
           user={user}
           clickIndex={clickIndex}
           index={index}
-          closeHandle={closeHandle}
+          closeHandle={(index)=>setclickIndex(index)}
           key={index}
         />
       ))}
