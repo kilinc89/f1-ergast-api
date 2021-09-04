@@ -21,7 +21,7 @@ const SeasonalRaces = ({ setYear, champ, closeResult }) => {
       <Table striped bordered hover className="border border-3">
         <thead>
           <tr>
-            <th colSpan="7"  style={styles.cardWraper} onClick={() => closeResult()}>
+            <th colSpan="7"  className="hover-cursor" onClick={() => closeResult()}>
               Season:{setYear} Race Results
             </th>
           </tr>

@@ -34,8 +34,7 @@ const ChampItem = ({ user, closeHandle, clickIndex, index }) => {
           striped
           bordered
           hover
-          className="border border-1 border-dark"
-          style={styles.cardWraper}
+          className="border border-1 border-dark hover-cursor"
           onClick={() =>
             handleClick(user.season, user.DriverStandings[0].Driver.driverId)
           }
@@ -70,13 +69,6 @@ const ChampItem = ({ user, closeHandle, clickIndex, index }) => {
 const styles = {
   component: {
     backgroundColor: "#e5e5e5",
-  },
-  cardWraper: {
-    cursor: "pointer",
-  },
-  icon: {
-    "font-size": "1.5rem",
-    "font-weight": "700",
   },
 };
 

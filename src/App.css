@@ -5,3 +5,7 @@
 Table {
   background-color: white;
 }
+
+.hover-cursor{
+  cursor:pointer
+}
