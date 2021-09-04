@@ -7,7 +7,7 @@ const ChampionsList = () => {
   const [clickIndex, setclickIndex] = useState(null);
 
   useEffect(() => {
-    getChamp();
+    champ.length<1 && getChamp();
   }, []);
 
   async function getChamp() {
@@ -25,7 +25,7 @@ const ChampionsList = () => {
   useEffect(() => {}, [clickIndex]);
 
   return (
-    <div className="p-3">
+    <div className="p-3 row">
       {champ.map((user, index) => (
         <ChampItem
           user={user}

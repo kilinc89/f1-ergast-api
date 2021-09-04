@@ -1,7 +1,7 @@
 import React from "react";
-const Tracks = ({ user, champ }) => {
+const Tracks = ({ racer, championID }) => {
   const findChamp = () => {
-    return champ === user.Results[0].Driver.driverId;
+    return championID === racer.Results[0].Driver.driverId;
   };
   return (
     <>
@@ -9,13 +9,13 @@ const Tracks = ({ user, champ }) => {
         className="tableId"
         style={findChamp() ? { backgroundColor: "#20c997" } : null}
       >
-        <td>{user.Circuit.circuitName}</td>
-        <td>{`${user.Results[0].Driver.givenName} ${user.Results[0].Driver.familyName}`}</td>
-        <td>{user.Results[0].Constructor.name}</td>
-        <td>{user.Results[0].laps}</td>
-        <td>{user.Results[0].grid}</td>
-        <td>{user.Results[0].Time.time}</td>
-        <td>{user.Results[0].points}</td>
+        <td>{racer.Circuit.circuitName}</td>
+        <td>{`${racer.Results[0].Driver.givenName} ${racer.Results[0].Driver.familyName}`}</td>
+        <td>{racer.Results[0].Constructor.name}</td>
+        <td>{racer.Results[0].laps}</td>
+        <td>{racer.Results[0].grid}</td>
+        <td>{racer.Results[0].Time.time}</td>
+        <td>{racer.Results[0].points}</td>
       </tr>
     </>
   );

@@ -4,7 +4,7 @@ import { Table } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Tracks from "./Tracks";
 
-const SeasonalRaces = ({ setYear, champ, closeResult }) => {
+const SeasonalRaces = ({ setYear, championID, closeResult }) => {
   const [seasonalRaces, setseasonalRaces] = useState([]);
 
   useEffect(() => {
@@ -37,8 +37,8 @@ const SeasonalRaces = ({ setYear, champ, closeResult }) => {
         </thead>
 
         <tbody>
-          {seasonalRaces.map((user, index) => (
-            <Tracks user={user} key={index} champ={champ} />
+          {seasonalRaces.map((racer, index) => (
+            <Tracks racer={racer} key={index} championID={championID} />
           ))}
         </tbody>
       </Table>

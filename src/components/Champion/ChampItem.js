@@ -6,12 +6,12 @@ import SeasonalRace from "../Races/SeasonalRace";
 const ChampItem = ({ user, closeHandle, clickIndex, index }) => {
   const [isTableSelected, setIsTableSelected] = useState(clickIndex === index);
   const [setYear, setsetYear] = useState(2005);
-  const [champ, setChamp] = useState("");
+  const [championID, setchampionID] = useState("");
 
   function handleClick(season, driverId) {
     setIsTableSelected(true);
     setsetYear(season);
-    setChamp(driverId);
+    setchampionID(driverId);
     closeHandle(index);
   }
 
@@ -26,7 +26,7 @@ const ChampItem = ({ user, closeHandle, clickIndex, index }) => {
       {isTableSelected ? (
         <SeasonalRace
           setYear={setYear}
-          champ={champ}
+          championID={championID}
           closeResult={() => setIsTableSelected(false)}
         />
       ) : (
