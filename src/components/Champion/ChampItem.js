@@ -8,7 +8,7 @@ const ChampItem = ({ user, closeHandle, clickIndex, index }) => {
   const [setYear, setsetYear] = useState(2005);
   const [championID, setchampionID] = useState("");
 
-  function handleClick(season, driverId) {
+  const handleClick=(season, driverId)=> {
     setIsTableSelected(true);
     setsetYear(season);
     setchampionID(driverId);
