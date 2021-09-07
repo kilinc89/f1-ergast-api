@@ -2,37 +2,36 @@ import React from "react";
 import { render } from "@testing-library/react";
 import ChampItem from "./ChampItem";
 
-const data= {
-    "season": "2005",
-    "round": "19",
-    "DriverStandings": [
-      {
-        "position": "1",
-        "positionText": "1",
-        "points": "133",
-        "wins": "7",
-        "Driver": {
-          "driverId": "alonso",
-          "permanentNumber": "14",
-          "code": "ALO",
-          "url": "http://en.wikipedia.org/wiki/Fernando_Alonso",
-          "givenName": "Fernando",
-          "familyName": "Alonso",
-          "dateOfBirth": "1981-07-29",
-          "nationality": "Spanish"
+const data = {
+  season: "2005",
+  round: "19",
+  DriverStandings: [
+    {
+      position: "1",
+      positionText: "1",
+      points: "133",
+      wins: "7",
+      Driver: {
+        driverId: "alonso",
+        permanentNumber: "14",
+        code: "ALO",
+        url: "http://en.wikipedia.org/wiki/Fernando_Alonso",
+        givenName: "Fernando",
+        familyName: "Alonso",
+        dateOfBirth: "1981-07-29",
+        nationality: "Spanish",
+      },
+      Constructors: [
+        {
+          constructorId: "renault",
+          url: "http://en.wikipedia.org/wiki/Renault_in_Formula_One",
+          name: "Renault",
+          nationality: "French",
         },
-        "Constructors": [
-          {
-            "constructorId": "renault",
-            "url": "http://en.wikipedia.org/wiki/Renault_in_Formula_One",
-            "name": "Renault",
-            "nationality": "French"
-          }
-        ]
-      }
-    ]
-  
-}
+      ],
+    },
+  ],
+};
 
 it("ChampItem should have season text", () => {
   const { getByText } = render(<ChampItem user={data} />);
@@ -62,5 +61,4 @@ it("ChampionsList should have round count", () => {
 it("ChampionsList should have wins count", () => {
   const { getByTestId } = render(<ChampItem user={data} />);
   expect(getByTestId("wins-text")).toHaveTextContent("7");
-  
 });

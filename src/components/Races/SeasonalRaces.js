@@ -17,43 +17,47 @@ const SeasonalRaces = ({ setYear, championID, closeResult }) => {
   }, []);
 
   return (
-    <div  data-testid="seasonal-races">
-      <Table striped bordered hover className="border border-3">
-        <thead>
-          <tr>
-            <th
-              colSpan="6"
-              className="hover-cursor"
-              onClick={() => closeResult()}
-            >
-              Season:{setYear} Race Results
-            </th>
-            <th
-              colSpan="1"
-              className="hover-cursor"
-              onClick={() => closeResult()}
-            >
-              <ArrowUpOutlined></ArrowUpOutlined>
-            </th>
-          </tr>
-          <tr>
-            <th>Circuit Name</th>
-            <th>Winner</th>
-            <th>Constructor</th>
-            <th>Laps</th>
-            <th>Grid</th>
-            <th>Time</th>
-            <th>Points</th>
-          </tr>
-        </thead>
+    <Table
+      striped
+      bordered
+      hover
+      className="border border-3"
+      data-testid="seasonal-races"
+    >
+      <thead>
+        <tr>
+          <th
+            colSpan="6"
+            className="hover-cursor"
+            onClick={() => closeResult()}
+          >
+            Season:{setYear} Race Results
+          </th>
+          <th
+            colSpan="1"
+            className="hover-cursor"
+            onClick={() => closeResult()}
+          >
+            <ArrowUpOutlined></ArrowUpOutlined>
+          </th>
+        </tr>
+        <tr>
+          <th>Circuit Name</th>
+          <th>Winner</th>
+          <th>Constructor</th>
+          <th>Laps</th>
+          <th>Grid</th>
+          <th>Time</th>
+          <th>Points</th>
+        </tr>
+      </thead>
 
-        <tbody>
-          {seasonalRaces.map((racer, index) => (
-            <Tracks racer={racer} key={index} championID={championID} />
-          ))}
-        </tbody>
-      </Table>
-    </div>
+      <tbody>
+        {seasonalRaces.map((racer, index) => (
+          <Tracks racer={racer} key={index} championID={championID} />
+        ))}
+      </tbody>
+    </Table>
   );
 };
 

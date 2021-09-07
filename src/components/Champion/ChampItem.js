@@ -34,7 +34,9 @@ const ChampItem = ({ user, handleClick }) => {
       <tbody>
         <tr>
           <td data-testid="driver-name-text">{`${user.DriverStandings[0].Driver.givenName} ${user.DriverStandings[0].Driver.familyName}`}</td>
-          <td data-testid="constractor-text">{user.DriverStandings[0].Constructors[0].name}</td>
+          <td data-testid="constractor-text">
+            {user.DriverStandings[0].Constructors[0].name}
+          </td>
           <td data-testid="point-text">{user.DriverStandings[0].points}</td>
           <td data-testid="round-text">{user.round}</td>
           <td data-testid="wins-text">{user.DriverStandings[0].wins}</td>

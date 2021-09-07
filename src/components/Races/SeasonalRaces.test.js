@@ -6,4 +6,3 @@ it("ChampionsList should be rendered", () => {
   const champListElement = screen.getAllByTestId("seasonal-races");
   expect(champListElement).toBeTruthy();
 });
-
