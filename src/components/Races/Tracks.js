@@ -1,13 +1,10 @@
 import React from "react";
 const Tracks = ({ racer, championID }) => {
-  const findChamp = () => {
-    return championID === racer.Results[0].Driver.driverId;
-  };
   return (
     <>
       <tr
         className="tableId"
-        style={findChamp() ? { backgroundColor: "#20c997" } : null}
+        style={{ backgroundColor: championID === racer.Results[0].Driver.driverId && "#20c997" } }
       >
         <td>{racer.Circuit.circuitName}</td>
         <td>{`${racer.Results[0].Driver.givenName} ${racer.Results[0].Driver.familyName}`}</td>
