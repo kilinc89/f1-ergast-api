@@ -17,7 +17,7 @@ const SeasonalRaces = ({ setYear, championID, closeResult }) => {
   }, []);
 
   return (
-    <div>
+    <div  data-testid="seasonal-races">
       <Table striped bordered hover className="border border-3">
         <thead>
           <tr>

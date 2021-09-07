@@ -62,4 +62,5 @@ it("ChampionsList should have round count", () => {
 it("ChampionsList should have wins count", () => {
   const { getByTestId } = render(<ChampItem user={data} />);
   expect(getByTestId("wins-text")).toHaveTextContent("7");
+  
 });

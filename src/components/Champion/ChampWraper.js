@@ -24,6 +24,7 @@ const ChampWraper = memo(({ user, closeHandle, clickIndex, index }) => {
     <div style={styles.component} >
       {isTableSelected ? (
         <SeasonalRaces
+         
           setYear={setYear}
           championID={championID}
           closeResult={() => setIsTableSelected(false)}
