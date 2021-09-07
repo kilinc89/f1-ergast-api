@@ -4,7 +4,10 @@ const Tracks = ({ racer, championID }) => {
     <>
       <tr
         className="tableId"
-        style={{ backgroundColor: championID === racer.Results[0].Driver.driverId && "#20c997" } }
+        style={{
+          backgroundColor:
+            championID === racer.Results[0].Driver.driverId && "#20c997",
+        }}
       >
         <td>{racer.Circuit.circuitName}</td>
         <td>{`${racer.Results[0].Driver.givenName} ${racer.Results[0].Driver.familyName}`}</td>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import ChampItem from "./ChampItem";
+import ChampWraper from "./ChampWraper";
 import axios from "axios";
 
 const ChampionsList = () => {
@@ -7,7 +7,7 @@ const ChampionsList = () => {
   const [clickIndex, setclickIndex] = useState(null);
 
   useEffect(() => {
-    champ.length<1 && getChamp();
+    champ.length < 1 && getChamp();
   }, []);
 
   const getChamp = async () => {
@@ -17,16 +17,16 @@ const ChampionsList = () => {
     }).then((response) => {
       setChamp(response.data.MRData.StandingsTable.StandingsLists);
     });
-  }
+  };
 
   return (
-    <div className="p-3 row">
+    <div className="p-3 row" data-testid="champion-list-wraper">
       {champ.map((user, index) => (
-        <ChampItem
+        <ChampWraper
           user={user}
           clickIndex={clickIndex}
           index={index}
-          closeHandle={(index)=>setclickIndex(index)}
+          closeHandle={(index) => setclickIndex(index)}
           key={index}
         />
       ))}

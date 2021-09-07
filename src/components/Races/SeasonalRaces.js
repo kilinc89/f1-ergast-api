@@ -57,10 +57,4 @@ const SeasonalRaces = ({ setYear, championID, closeResult }) => {
   );
 };
 
-const styles = {
-  cardWraper: {
-    cursor: "pointer",
-  },
-};
-
 export default SeasonalRaces;
