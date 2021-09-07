@@ -9,6 +9,7 @@
 
 - App build in React.js
 - State management library is not being used in app
+- I didnt write test for all component, I dont get accustomed to use react test library. I have experince on react native detox library mostly.
 - Race winners are listed onload
 - When user clicks on the race winner of the year, the list of the races of the relevant year comes to the page.
 - When user clicks the header of list of the relevant years races winners list hides

@@ -12,6 +12,7 @@ const ChampItem = ({ user, handleClick }) => {
       onClick={() =>
         handleClick(user.season, user.DriverStandings[0].Driver.driverId)
       }
+      data-testid="table-wraper"
     >
       <thead>
         <tr>
@@ -32,11 +33,11 @@ const ChampItem = ({ user, handleClick }) => {
       </thead>
       <tbody>
         <tr>
-          <td>{`${user.DriverStandings[0].Driver.givenName} ${user.DriverStandings[0].Driver.familyName}`}</td>
-          <td>{user.DriverStandings[0].Constructors[0].name}</td>
-          <td>{user.DriverStandings[0].points}</td>
-          <td>{user.round}</td>
-          <td>{user.DriverStandings[0].wins}</td>
+          <td data-testid="driver-name-text">{`${user.DriverStandings[0].Driver.givenName} ${user.DriverStandings[0].Driver.familyName}`}</td>
+          <td data-testid="constractor-text">{user.DriverStandings[0].Constructors[0].name}</td>
+          <td data-testid="point-text">{user.DriverStandings[0].points}</td>
+          <td data-testid="round-text">{user.round}</td>
+          <td data-testid="wins-text">{user.DriverStandings[0].wins}</td>
         </tr>
       </tbody>
     </Table>

@@ -18,7 +18,6 @@ const ChampWraper = memo(({ user, closeHandle, clickIndex, index }) => {
     if (index !== clickIndex) {
       setIsTableSelected(false);
     }
-    console.log(3333,clickIndex)
   }, [clickIndex]);
 
   return (
